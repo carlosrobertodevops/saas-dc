@@ -1,12 +1,11 @@
 import {NextResponse} from 'next/server';
 import type {NextRequest} from 'next/server';
-import {locales, defaultLocale} from './i18n/locales';
+import {locales, defaultLocale} from './src/i18n/locales';
 
 const PUBLIC_FILE = /\.(.*)$/;
 
 export function middleware(request: NextRequest) {
   const {pathname} = request.nextUrl;
-
   if (
     PUBLIC_FILE.test(pathname) ||
     pathname.startsWith('/api') ||
@@ -22,5 +21,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|.*\\..*|api).*)']
+  matcher: ['/((?!_next|.*\..*|api).*)']
 };
