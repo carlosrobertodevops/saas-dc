@@ -1,0 +1,47 @@
+/* CustomQuill.css */
+.ql-toolbar.ql-snow {
+  border-color: #c0cddf;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px; /* Adds rounded corners */
+  background-color: #ecf4ff; /* Slate background */
+}
+
+.ql-container.ql-snow {
+  border-color: #c0cddf;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px; /* Adds rounded corners */
+}
+
+.ql-toolbar .ql-stroke {
+  /* stroke: #8a2be2; */
+}
+
+.ql-toolbar .ql-fill {
+  /* fill: #8a2be2; */
+}
+
+.ql-toolbar .ql-picker {
+  /* color: #8a2be2; */
+}
+
+.ql-editor.ql-blank::before {
+  color: #b98cef;
+}
+
+.ql-snow .ql-tooltip {
+  background-color: #f3e5ff;
+  /* border-color: #8a2be2; */
+  border-radius: 8px; /* Adds rounded corners */
+}
+
+.ql-snow .ql-picker-options {
+  background-color: #f3e5ff;
+}
+
+.ql-snow .ql-tooltip input[type=text] {
+  /* border-color: #8a2be2; */
+}
+
+.ql-snow .ql-tooltip a.ql-action::after {
+  /* border-right: 1px solid #8a2be2; */
+}

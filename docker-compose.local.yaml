@@ -1,0 +1,52 @@
+name: generator-saas-local
+
+services:
+  app:
+    image: node:22-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+      - next-cache:/app/.next
+    command: sh -c "npm ci && npm run dev"
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env.local
+    environment:
+      NODE_ENV: development
+      NEXT_TELEMETRY_DISABLED: "1"
+      WATCHPACK_POLLING: "true"
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+    depends_on:
+      - mongo
+      # mongo:
+      #   condition: service_healthy
+    restart: unless-stopped
+
+  mongo:
+    image: mongo:7
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-root}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    # Healthcheck mais tolerante + autenticação explícita
+    # healthcheck:
+    #   test:
+    #     [
+    #       "CMD-SHELL",
+    #       "mongosh --norc --quiet 'mongodb://root:root@localhost:27017/admin?authSource=admin' --eval 'db.adminCommand({ ping: 1 }).ok' | grep -q 1"
+    #     ]
+    #   interval: 10s
+    #   timeout: 5s
+    #   retries: 30
+    #   start_period: 40s
+
+volumes:
+  mongo-data:
+  next-cache:
