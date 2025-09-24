@@ -4,6 +4,7 @@ import connect from "@/app/lib/connect";
 import User from "@/app/models/UserSchema";
 import { NextResponse } from "next/server";
 
+// POST Method: Retrieve user properties (isPro, accumulatedWords) based on user id
 export async function POST(req: Request) {
   const { id, email } = await req.json(); // Adjust fields based on your model
 
