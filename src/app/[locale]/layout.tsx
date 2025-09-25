@@ -27,20 +27,14 @@ export async function generateMetadata({params}:{params:{locale: Locale}}): Prom
   };
 }
 
-export default async function LocaleLayout({
-  children, params
-}: Readonly<{children: React.ReactNode; params:{locale: Locale}}>) {
+export default async function LocaleLayout({children, params}:{children: React.ReactNode; params:{locale: Locale}}) {
   const {locale} = params;
   if (!locales.includes(locale)) return notFound();
   const messages = await getMessages(locale);
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <LocaleSwitcher current={locale} />
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <div className="fixed right-4 top-4 z-50"><LocaleSwitcher current={locale} /></div>
+      {children}
+    </NextIntlClientProvider>
   );
 }

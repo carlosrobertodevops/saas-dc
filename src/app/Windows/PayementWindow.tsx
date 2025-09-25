@@ -1,7 +1,10 @@
+'use client';
 import { useAppContext } from "../AppContext";
 import { FaCheck } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function PaymentWindow() {
+  const t = useTranslations('Common');
   const {
     isDarkModeObject: { isDarkMode },
     openPaymentWindowObject: { openPaymentWindow, setOpenPaymentWindow },
@@ -47,7 +50,7 @@ export default function PaymentWindow() {
             }}
             className="px-14 py-2 bg-purple-600 rounded-lg text-white "
           >
-            Go Back To Dashboard
+            {t('goBackToDashboard')}
           </button>
         </div>
       </div>

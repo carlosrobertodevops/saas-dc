@@ -1,8 +1,10 @@
+'use client';
 import { useAppContext } from '@/src/app/AppContext';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { HistoryData } from '../types/AppType';
 export default function ConfirmationWindow() {
+  const t = useTranslations('Common');
   const [isLoading, setIsLoading] = useState(false);
   const {
     openConfirmationWindowObject: {

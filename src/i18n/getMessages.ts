@@ -1,4 +1,4 @@
-import {Locale} from './locales';
+import {Locale} from '@/src/i18n/locales';
 
 export async function getMessages(locale: Locale) {
   switch (locale) {
