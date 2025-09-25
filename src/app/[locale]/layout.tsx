@@ -4,7 +4,6 @@ import {locales, type Locale, toOgLocale} from '@/src/i18n/locales';
 import {notFound} from 'next/navigation';
 import type {Metadata} from 'next';
 import LocaleSwitcher from '@/src/components/LocaleSwitcher';
-
 export const dynamic = 'force-dynamic';
 
 export function generateStaticParams() {

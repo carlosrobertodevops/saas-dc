@@ -5,9 +5,9 @@ import { BiSearch } from "react-icons/bi";
 import { FiPlusCircle } from "react-icons/fi";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiStickyNoteAddLine } from "react-icons/ri";
-import { useAppContext } from "../AppContext";
+import { useAppContext } from "../../AppContext";
 import { FiMenu } from "react-icons/fi";
-import { SingleTemplate } from "../types/AppType";
+import { SingleTemplate } from "../../types/AppType";
 import { GiRoundStar } from "react-icons/gi";
 
 import { UserButton, useAuth, useUser } from "@clerk/nextjs";
