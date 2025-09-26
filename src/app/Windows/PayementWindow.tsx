@@ -1,4 +1,5 @@
 'use client';
+
 import { useAppContext } from "../AppContext";
 import { FaCheck } from "react-icons/fa";
 import { useTranslations } from "next-intl";
