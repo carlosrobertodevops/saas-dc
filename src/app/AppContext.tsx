@@ -24,7 +24,7 @@ import { AppType } from "./types/AppType";
 import { MdDarkMode, MdSettings, MdLogout } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
 // Icons for Dark Mode, Settings, Log Out
-
+import { useTranslations } from "next-intl";
 import { LuWholeWord } from "react-icons/lu";
 import { IoDocumentsOutline } from "react-icons/io5";
 import { IoMdTime } from "react-icons/io";
@@ -34,7 +34,7 @@ import { RiReplay15Line } from "react-icons/ri";
 import { RiReplay30Line } from "react-icons/ri";
 
 import { templatesArray } from "./LocalData/templates";
-import { SingleTemplateExtended } from "./dashboard/Hisotry/AllHistory";
+import { SingleTemplateExtended } from "@/src/app/[locale]/dashboard/Hisotry/AllHistory";
 import { newHistoryData } from "./LocalData/mainData";
 
 import { templatesFilteringItemsArray } from "./LocalData/templateFilteringItems";

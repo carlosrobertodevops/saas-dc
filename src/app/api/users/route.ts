@@ -1,7 +1,7 @@
-// pages/api/users.ts
+// pages/api/users
 import { NextApiRequest, NextApiResponse } from "next";
-import connect from "@/src/app/lib/connect.ts";
-import User from "@/src/app/models/UserSchema.ts";
+import connect from "@/src/app/lib/connect";
+import User from "@/src/app/models/UserSchema";
 import { NextResponse } from "next/server";
 
 // POST Method: Retrieve user properties (isPro, accumulatedWords) based on user id

@@ -3,9 +3,9 @@ import { LuHistory } from "react-icons/lu"; // Example icons, replace with actua
 import { MdModeEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 import { FaRegEye } from "react-icons/fa";
-import { useAppContext } from "@/src/app/AppContext.tsx";
+import { useAppContext } from "@/src/app/AppContext";
 import { SingleTemplateExtended } from "../AllHistory";
-import { HistoryData } from "@/src/app/types/AppType.ts";
+import { HistoryData } from "@/src/app/types/AppType";
 import { FaRegCopy } from "react-icons/fa";
 import { convertFromTextToReactNode } from "../../ContentGenerator/LeftSection/LeftSection";
 import { loadManifestWithRetries } from "next/dist/server/load-components";

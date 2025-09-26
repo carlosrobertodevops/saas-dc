@@ -1,5 +1,5 @@
 // Importing required icons
-import { useAppContext } from "@/src/app/AppContext.tsx";
+import { useAppContext } from "@/src/app/AppContext";
 import { useEffect, useState } from "react";
 import { AiFillRobot } from "react-icons/ai";
 import { FiSidebar } from "react-icons/fi";

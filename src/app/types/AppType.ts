@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode } from "react";
-import { SingleTemplateExtended } from "../dashboard/Hisotry/AllHistory";
+import { SingleTemplateExtended } from "@/src/app/[locale]/dashboard/Hisotry/AllHistory";
 import { IconType } from "react-icons";
 
 export type SingleFilteringItem = {

@@ -1,18 +1,18 @@
 "use client";
 
-import { useAppContext } from "@/src/app/AppContext.tsx";
-import StatsDropDown from "@/src/app/DropDowns/StatsDropDown.tsx";
+import { useAppContext } from "@/src/app/AppContext";
+import StatsDropDown from "@/src/app/DropDowns/StatsDropDown";
 import ContentGeneratorForm from "./ContentGenerator/ContentGenerator";
 import ContentGenerator from "./ContentGenerator/ContentGenerator";
 import AllHistory from "./Hisotry/AllHistory";
 import MainArea from "./MainArea/page";
 import SideBar from "./SideBar/SideBar";
 import FavoriteTemplates from "./FavoriteTemplates/FavoriteTemplates";
-import AllTemplatesPage from "./Templates/AllTemplatesPage.tsx";
+import AllTemplatesPage from "./Templates/AllTemplatesPage";
 import { Toaster } from "react-hot-toast";
-import ConfirmationWindow from "@/src/app/Windows/DeleteConfirmationWindow.tsx";
+import ConfirmationWindow from "@/src/app/Windows/DeleteConfirmationWindow";
 import SubscriptionPlans from "./subscription/SubscriptionPage";
-import PaymentWindow from "@/src/app/Windows/PayementWindow.tsx";
+import PaymentWindow from "@/src/app/Windows/PayementWindow";
 
 export default function Page() {
   const {

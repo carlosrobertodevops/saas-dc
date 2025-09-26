@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 import { IoIosClose } from "react-icons/io";
-import { useAppContext } from "@/src/app/AppContext.tsx";
+import { useAppContext } from "@/src/app/AppContext";
 import MainHeader from "../MainHeader";
 import SingleHistoryItem from "./Components/SingleHistoryItem";
 import HistorySubHeader from "./Components/HistorySubHeader";
 import AllHistoryList from "./Components/AllHistoryList";
-import { SingleTemplate } from "@/src/app/types/AppType.ts";
+import { SingleTemplate } from "@/src/app/types/AppType";
 
 export type SingleTemplateExtended = SingleTemplate & {
   isSelected: boolean;

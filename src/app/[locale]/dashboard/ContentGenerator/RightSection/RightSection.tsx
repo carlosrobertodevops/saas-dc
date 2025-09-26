@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useQuill } from "react-quilljs";
 import { IoDocumentTextOutline } from "react-icons/io5";
-import { useAppContext } from "@/src/app/AppContext.tsx";
+import { useAppContext } from "@/src/app/AppContext";
 import "quill/dist/quill.snow.css";
 import "../../../custom-quil.css"; // Add css for snow theme
 import { useContentGeneratorForm } from "../LeftSection/LeftSectionContext";

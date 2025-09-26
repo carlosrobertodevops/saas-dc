@@ -5,7 +5,7 @@ import Logo from "./Components/Logo";
 import MainSection from "./Components/MainSection";
 import OthersSection from "./Components/OthersSection";
 import RemainingWords from "./Components/RemainingWords";
-import { useAppContext } from "@/src/app/AppContext.tsx";
+import { useAppContext } from "@/src/app/AppContext";
 
 function SideBar() {
   //Variables

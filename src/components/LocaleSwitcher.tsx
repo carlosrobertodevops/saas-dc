@@ -1,6 +1,6 @@
 'use client';
 import {usePathname, useRouter} from 'next/navigation';
-import {locales, type Locale} from '@/src/i18n/locales.ts';
+import {locales, type Locale} from '@/src/i18n/locales';
 
 export default function LocaleSwitcher({current}:{current: Locale}) {
   const pathname = usePathname();
