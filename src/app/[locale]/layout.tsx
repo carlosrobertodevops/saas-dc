@@ -7,9 +7,11 @@ import LocaleSwitcher from '@/src/components/LocaleSwitcher';
 
 export const dynamic = 'force-dynamic';
 
+export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
 }
 
+export async function generateMetadata({params}:{params:{locale: Locale}}): Promise<Metadata> {
   return {
     alternates: {
       languages: {
