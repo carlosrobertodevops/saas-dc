@@ -1,3 +1,14 @@
+#!/usr/bin/env sh
+set -e
+
+LAYOUT="src/app/[locale]/layout.tsx"
+
+if [ ! -f "$LAYOUT" ]; then
+  echo "❌ Não encontrei $LAYOUT"; exit 1
+fi
+
+echo "➡️ Reescrevendo $LAYOUT como Server Component…"
+cat > "$LAYOUT" <<'TSX'
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from '@/src/i18n/getMessages';
 import {locales, type Locale, toOgLocale} from '@/src/i18n/locales';
@@ -7,9 +18,11 @@ import LocaleSwitcher from '@/src/components/LocaleSwitcher';
 
 export const dynamic = 'force-dynamic';
 
+export function generateStaticParams() {
   return locales.map((locale) => ({locale}));
 }
 
+export async function generateMetadata({params}:{params:{locale: Locale}}): Promise<Metadata> {
   return {
     alternates: {
       languages: {
@@ -38,3 +51,21 @@ export default async function LocaleLayout({
     </NextIntlClientProvider>
   );
 }
+TSX
+
+# Remover qualquer 'use client' perdido e duplicatas comentadas no layout (defensivo)
+sed -i.bak -E "1{/^'use client'|^\"use client\"/d}" "$LAYOUT" || true
+sed -i.bak -E '/^\/\/ .*/d' "$LAYOUT" || true
+rm -f "$LAYOUT.bak"
+
+echo "🧹 Limpando build anterior…"
+rm -rf .next
+
+echo "📦 Instalando dependências…"
+if [ -f package-lock.json ]; then npm ci; else npm i; fi
+
+echo "🏗️ Build…"
+npm run build
+
+echo "🚀 Start (produção)."
+npm run start
