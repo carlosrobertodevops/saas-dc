@@ -1,3 +1,6 @@
+'use client'; // ADICIONAR ESTA LINHA
+
+import * as React from "react";
 import { useEffect } from "react";
 
 function useClickOutside(
