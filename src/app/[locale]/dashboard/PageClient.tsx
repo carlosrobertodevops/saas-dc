@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic';
+'use client'
 import PageClient from './PageClient';
 
 export default async function Page() {
