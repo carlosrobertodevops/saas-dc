@@ -1,44 +1,26 @@
 import {NextResponse} from 'next/server';
-import type {NextRequest} from 'next/server';
-import {locales, defaultLocale} from './src/i18n/locales';
 import createMiddleware from 'next-intl/middleware';
-import { clerkMiddleware } from '@clerk/nextjs/server';
-const PUBLIC_FILE = /\.(.*)$/;
+import {clerkMiddleware} from '@clerk/nextjs/server';
+import {locales, defaultLocale} from './src/i18n/locales';
 
+// Internationalization middleware (next-intl)
 const intlMiddleware = createMiddleware({
-  locales: ['pt-br', 'en-us', 'es-es'],
-  defaultLocale: 'pt-br' // ✅ Define um valor fixo ou remove a linha problemática
-})
+  locales: Array.from(locales),
+  defaultLocale
+});
 
-export default clerkMiddleware();
+// Combine Clerk and next-intl middleware
+export default clerkMiddleware((auth, req) => {
+  // You can add route-based auth logic here if needed, then fall through to i18n
+  // Example: protect specific paths
+  // if (req.nextUrl.pathname.startsWith('/admin')) auth().protect();
 
-export function middleware(request: NextRequest) {
-  const {pathname} = request.nextUrl;
-  const hasLocale = locales.some((loc) => pathname.startsWith(`/${loc}`));
+  return intlMiddleware(req) ?? NextResponse.next();
+});
 
-  if (PUBLIC_FILE.test(pathname) || pathname.startsWith('/api') || pathname.startsWith('/_next')) return;
-
-  if (!hasLocale) {
-    const url = request.nextUrl.clone();
-    url.pathname = `/${defaultLocale}${pathname}`;
-    return NextResponse.redirect(url);
-  };
-
-  if (request.nextUrl.pathname.startsWith('/api') ||
-      request.nextUrl.pathname.includes('.') ||
-      request.nextUrl.pathname.startsWith('/_next')) {
-    return NextResponse.next()
-  }
-
-  if (
-    PUBLIC_FILE.test(pathname) ||
-    pathname.startsWith('/api') ||
-    pathname.startsWith('/_next')
-  ) return;
-
-  return intlMiddleware(request)
-}
-
+// Ensure middleware runs on all non-static, non-API routes
 export const config = {
   matcher: ['/((?!_next|.*\\..*|api).*)']
 };
+
+
