@@ -1,5 +1,5 @@
-import { useAppContext } from "@/src/app/AppContext";
-import { SingleTemplate } from "@/src/app/types/AppType";
+import { useAppContext } from "@/src/app/AppContext.tsx";
+import { SingleTemplate } from "@/src/app/types/AppType.ts";
 import { FaHeart } from "react-icons/fa";
 import Checkbox from "@mui/material/Checkbox";
 import { MdFavoriteBorder } from "react-icons/md";

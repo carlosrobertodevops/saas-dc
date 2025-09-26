@@ -3,7 +3,7 @@ import ToneOrStyle from "./ToneOrStyle";
 import Audience from "./Audience";
 import LanguageSelector from "./OtherComponents/LanguageSelector";
 import Keywords from "./OtherComponents/Keywords";
-import { useAppContext } from "@/src/app/AppContext";
+import { useAppContext } from "@/src/app/AppContext.tsx";
 
 export const RenderFormFields = () => {
   const {

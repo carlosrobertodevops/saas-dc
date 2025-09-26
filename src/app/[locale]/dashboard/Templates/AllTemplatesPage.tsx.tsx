@@ -3,7 +3,7 @@ import React from "react";
 import MainHeader from "../MainHeader";
 import TemplateSubHeader from "./Components/TemplatesSubHeader";
 import TemplateList from "./Components/TemplatesList";
-import { useAppContext } from "@/src/app/AppContext";
+import { useAppContext } from "@/src/app/AppContext.tsx";
 
 function AllTemplatesPage() {
   const {

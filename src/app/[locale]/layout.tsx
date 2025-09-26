@@ -1,9 +1,9 @@
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from '@/src/i18n/getMessages';
-import {locales, type Locale, toOgLocale} from '@/src/i18n/locales';
+import {getMessages} from '@/src/i18n/getMessages.ts';
+import {locales, type Locale, toOgLocale} from '@/src/i18n/locales.ts';
 import {notFound} from 'next/navigation';
 import type {Metadata} from 'next';
-import LocaleSwitcher from '@/src/components/LocaleSwitcher';
+import LocaleSwitcher from '@/src/components/LocaleSwitcher.tsx';
 export const dynamic = 'force-dynamic';
 
 export function generateStaticParams() {

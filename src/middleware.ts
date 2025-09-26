@@ -1,6 +1,6 @@
 import {NextResponse} from 'next/server';
 import type {NextRequest} from 'next/server';
-import {locales, defaultLocale} from '@/src/i18n/locales';
+import {locales, defaultLocale} from '@/src/i18n/locales.ts';
 
 const PUBLIC_FILE = /\.(.*)$/;
 

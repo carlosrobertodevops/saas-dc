@@ -1,5 +1,5 @@
-import { useAppContext } from "@/src/app/AppContext";
-import PayPalWrapper from "@/src/app/PayPalWrapper";
+import { useAppContext } from "@/src/app/AppContext.tsx";
+import PayPalWrapper from "@/src/app/PayPalWrapper.tsx";
 import React, { useEffect, useState } from "react";
 import { IoCheckmarkCircle, IoClose } from "react-icons/io5";
 import { IoCloseSharp } from "react-icons/io5";

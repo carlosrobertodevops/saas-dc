@@ -12,9 +12,9 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
-import { useAppContext } from "@/src/app/AppContext";
-import StatsDropDown from "@/src/app/DropDowns/StatsDropDown";
-import DaysDropDown from "@/src/app/DropDowns/DaysDropDown";
+import { useAppContext } from "@/src/app/AppContext.tsx";
+import StatsDropDown from "@/src/app/DropDowns/StatsDropDown.tsx";
+import DaysDropDown from "@/src/app/DropDowns/DaysDropDown.tsx";
 import {
   formatAndAggregateAverageWords,
   formatAndAggregateTimeSaved,
@@ -22,7 +22,7 @@ import {
   formatAndCountDocuments,
   newHistoryData,
   sortAndShortenMonth,
-} from "@/src/app/LocalData/mainData";
+} from "@/src/app/LocalData/mainData.ts";
 
 const data = [
   { name: "Day 1", words: 0 },

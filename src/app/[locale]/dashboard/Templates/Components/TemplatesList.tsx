@@ -1,7 +1,7 @@
-import { useAppContext } from "@/src/app/AppContext";
+import { useAppContext } from "@/src/app/AppContext.tsx";
 import TemplateSingleCard from "./TemplateSingleCard";
 import { useState } from "react";
-import { SingleFilteringItem, SingleTemplate } from "@/src/app/types/AppType";
+import { SingleFilteringItem, SingleTemplate } from "@/src/app/types/AppType.ts";
 
 export default function TemplateList() {
   const {

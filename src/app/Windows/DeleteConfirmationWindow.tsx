@@ -1,5 +1,5 @@
 'use client';
-import { useAppContext } from '@/src/app/AppContext';
+import { useAppContext } from '@/src/app/AppContext.tsx';
 import { useEffect, useLayoutEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { HistoryData } from '../types/AppType';

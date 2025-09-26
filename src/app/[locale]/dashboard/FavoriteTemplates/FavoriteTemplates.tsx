@@ -1,4 +1,4 @@
-import { useAppContext } from "@/src/app/AppContext";
+import { useAppContext } from "@/src/app/AppContext.tsx";
 import React from "react";
 import MainHeader from "../MainHeader";
 import TemplateSingleCard from "../Templates/Components/TemplateSingleCard";

@@ -1,6 +1,6 @@
 "use client";
-import { useAppContext } from "@/src/app/AppContext";
-import { MenuItem } from "@/src/app/types/AppType";
+import { useAppContext } from "@/src/app/AppContext.tsx";
+import { MenuItem } from "@/src/app/types/AppType.ts";
 import React, { useState } from "react";
 import { MdDarkMode, MdSettings, MdLogout } from "react-icons/md"; // Icons for Dark Mode, Settings, Log Out
 import { MdLightMode } from "react-icons/md";
