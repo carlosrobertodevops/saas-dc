@@ -3,9 +3,9 @@ import { useQuill } from "react-quilljs";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { useAppContext } from "@/src/app/AppContext";
 import "quill/dist/quill.snow.css";
-import "../../../custom-quil.css"; // Add css for snow theme
+import "@/src/app/custom-quil.css"; // Add css for snow theme
 import { useContentGeneratorForm } from "../LeftSection/LeftSectionContext";
-import { countWords } from "../../Hisotry/Components/SingleHistoryItem";
+import { countWords } from "@/src/app/[locale]/dashboard/Hisotry/Components/SingleHistoryItem";
 
 const formatResponse = (response: string) => {
   // Remove the triple backticks and format the code section for multiple languages

@@ -8,7 +8,7 @@ import AllHistory from "./Hisotry/AllHistory";
 import MainArea from "./MainArea/page";
 import SideBar from "./SideBar/SideBar";
 import FavoriteTemplates from "./FavoriteTemplates/FavoriteTemplates";
-import AllTemplatesPage from "./Templates/AllTemplatesPage";
+import AllTemplatesPage from "./Templates/AllTemplatesPage.tsx";
 import { Toaster } from "react-hot-toast";
 import ConfirmationWindow from "@/src/app/Windows/DeleteConfirmationWindow";
 import SubscriptionPlans from "./subscription/SubscriptionPage";
